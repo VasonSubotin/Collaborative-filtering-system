@@ -1,11 +1,10 @@
 
-# Resturant recommendation system on collaborative filtering
+# Restaurant recommendation system based on collaborative filtering
 
-### In this project, we create a recommendation system based on collaborative filtering. The model will recommend a user for a resturant based on his and other users past experiences and in all the restaurants that are in the data set.
+### In this project, we create a recommendation system based on collaborative filtering. The model will recommend a user for a restaurant based on his and other users past experiences and in all the restaurants that are in the data set.
 ## Collaborative Filtering 
-###The goal of  Collaborative Filtering-based (CF) algorithms is to provide item recommendations or predictions based on user's previous likings and opinion of other like-minded users. The opinions of users can be obtained explicitly from the users or by some implicit measures.In the typical CF scenario, there is a list of m users U={u1,u2,..,um} and the list of n items I={I1,I2,..,Im}. which the user has expresses his opinions about. Opinions cab be given by a user as a rating score (in out case this is the stars column). There exists a distinguished user ua belong U for whom the task of CF algorithm is to find an item likeliness that can be of two forms prediction and recommendation. Prediction is numerical value P expressing the predicted likeliness of item for the active user. Recommendation is a list of N items that the active user will like the most. 
+###The goal of  Collaborative Filtering based (CF) algorithms is to provide item recommendations or prediction based on user's previous likings and opinion of other like-minded users. The opinions of users can be obtained explicitly from the users or by some implicit measures.In the typical CF scenario, there is a list of m users U={u1,u2,..,um} and the list of n items I={I1,I2,..,Im}. which the user has expresses his opinions about. Opinions cab be given by a user as a rating score (in out case this is the stars column). There exists a distinguished user ua belong U for whom the task of CF algorithm is to find an item likeliness that can be of two forms prediction and recommendation. Prediction is numerical value P expressing the predicted likeliness of item for the active user. Recommendation is a list of N items that the active user will like the most. 
 ### There two different  CF algorithms user-based and item-based. User-based algorithms utilize entire user-item data to generate prediction. The idea is to find out a set of users (known as neighbours), that have a history of agreeing with the target user. Once such a set is formed, the system uses an algorithm to combine the preferences of neighbors to produce a prediction or top-N recommendations for active user. In contrast, Item based approach looks into the set of items the target user has rated and computes how similar they are to the target item i and then select k most similar items {i1,i2,..,ik}. At the same time their corresponding similarities {s1,s2,..,sik} are also computed. 
-
 
 
 
@@ -91,7 +90,7 @@
     pd.set_option('display.width',500)
     pd.set_option('display.max_columns',100)
     
-    #os.chdir(r'E:\Andrey\Stanford\PythonClass')
+    os.chdir(r'E:\Andrey\Stanford\PythonClass')
     fulldf=pd.read_csv("bigdf.csv")
     fulldf.head()
 
@@ -1105,6 +1104,121 @@
     
 
 ### Conclusions:We made the Collaborative filtering engine that provides recomendations for top 5 choices made by the target user by calculating the similarity for each of the favorite resturant.
+
+
+    
+
+
+    
+
+
+    
+
+    User Avearge 3.75 for Jennifer
+    Predicted ratings for tops choices calculated earlier:
+    Elements | 4.7 | Average 4.7
+    Sonora Mesquite Grill | 4.29 | Average 4.38
+    Rokerij | 4.38 | Average 4.38
+    Mastro's City Hall Steakhouse | 4.1 | Average 4.28
+    Lo-Lo's Chicken & Waffles | 4.27 | Average 4.28
+    The Mission | 4.22 | Average 4.16
+    Tuck Shop | 4.01 | Average 3.97
+    Carolina's Mexican Food | 3.68 | Average 3.91
+    Canteen Modern Tequila Bar | 3.9 | Average 3.88
+    Mi Patio Mexican Restaurant | 3.78 | Average 3.83
+    Four Peaks Brewery | 3.91 | Average 3.77
+    True Food Kitchen | 3.76 | Average 3.76
+    Lee's Sandwiches | 3.72 | Average 3.72
+    Daily Dose | 3.46 | Average 3.68
+    Pita Jungle | 3.64 | Average 3.64
+    America's Taco Shop | 3.69 | Average 3.64
+    Brio Tuscan Grille | 3.58 | Average 3.62
+    Carlsbad Tavern | 3.54 | Average 3.59
+    Scratch Pastries & Bistro | 2.54 | Average 3.56
+    Carly's Bistro | 3.54 | Average 3.5
+    Arcadia Tavern | 3.46 | Average 3.46
+    Mellow Mushroom | 3.31 | Average 3.31
+    Teharu Sushi | 2.87 | Average 2.87
+    
+
+
+         
+
+
+    
+
+    for user Jennifer avg 3.75
+    ===============================================
+    RA Sushi Bar Restaurant
+    Predicted Rating: 3.03571428571
+    Actual User Rating 5 
+    Avg Rating 3.03571428571
+    ===============================================
+    Blanco
+    Predicted Rating: 3.40785825337
+    Actual User Rating 5 
+    Avg Rating 3.39285714286
+    ===============================================
+    Scramble
+    Predicted Rating: 3.79114819979
+    Actual User Rating 5 
+    Avg Rating 3.80487804878
+    ===============================================
+    Liberty Market
+    Predicted Rating: 3.98947837758
+    Actual User Rating 4 
+    Avg Rating 3.97142857143
+    ===============================================
+    Joe's Real BBQ
+    Predicted Rating: 3.84134369407
+    Actual User Rating 4 
+    Avg Rating 3.81578947368
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+
+
+    array([ 3.95302154,  3.78571085,  4.20605412, ...,  4.35397774,
+            3.22683959,  3.66227205])
+
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-56-d2d5cea64ee7> in <module>()
+    ----> 1 actual=predict["stars"]
+          2 compare_results(actual,predictdf['predict_3_3'],title='k=3 and reg=3')
+          3 compare_results(actual,predictdf['predict_3_15'],title='k=3 and reg=15')
+          4 compare_results(actual,predictdf['predict_10_3'],title='k=10 and reg=3')
+          5 compare_results(actual,predictdf['predict_10_15'],title='k=10 and reg=15')
+    
+
+    NameError: name 'predict' is not defined
+
+
+
+    
 
 
     
